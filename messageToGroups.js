@@ -1,5 +1,24 @@
 const TelegramBot = require('node-telegram-bot-api');
+const express = require('express');
+const bodyParser = require('body-parser');
 require('dotenv').config();
+
+const app = express();
+app.use(bodyParser.json());
+
+// Set up route to handle incoming updates from Telegram Bot API
+app.post(`/telegram/${process.env.API_TOKEN}`, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
+
+// Set up webhook
+bot.setWebhook(`https://courageous-vestments-fawn.cyclic.app/telegram/${process.env.API_TOKEN}`);
+
+// Start HTTPS server
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server started on port ${process.env.PORT || 3000}`);
+});
 
 const bot = new TelegramBot(process.env.API_TOKEN, { polling: true });
 
