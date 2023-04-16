@@ -5,6 +5,7 @@
   "main": "messageToGroups.js",
   "scripts": {
     "start": "node ./src/index.js",
+    "build": "npm i",
     "dev": "node --watch ./src/index.js"
   },
   "repository": {
