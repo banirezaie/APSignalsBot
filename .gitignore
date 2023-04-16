@@ -1,2 +1,5 @@
 /.env
 /node_modules
+
+## yarn v3 ignore
+.yarn
