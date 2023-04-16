@@ -1,0 +1,7 @@
+build:
+  steps:
+    - run: yarn
+
+deploy:
+  steps:
+    - run: yarn start
