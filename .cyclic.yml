@@ -1,12 +1,7 @@
 build:
   steps:
-    - run: npm install
+    - run: yarn
 
 deploy:
   steps:
-    - run: npm start
-
-environments:
-  production:
-    NODE_ENV: production
-    API_TOKEN: ${API_TOKEN}
+    - run: yarn start
